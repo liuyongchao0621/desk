@@ -14,7 +14,6 @@
     <context:component-scan base-package="com.desk.project"/>
 
     <!--配置数据库的属性文件-->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
 
     <!-- 创建jdbc数据源 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">

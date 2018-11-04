@@ -1,4 +1,4 @@
-package com.desk.project.db.mapping;
+package com.desk.project.db.mapper;
 
 import com.desk.project.db.pojo.DrRepaySchedule;
 

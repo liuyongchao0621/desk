@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.desk.project.db.mapping.DrCustInfoMapper">
+<mapper namespace="com.desk.project.db.mapper.DrCustInfoMapper">
   <resultMap id="BaseResultMap" type="com.desk.project.db.pojo.DrCustInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="biz_type" jdbcType="VARCHAR" property="bizType" />

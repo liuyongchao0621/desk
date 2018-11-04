@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/task
+						   http://www.springframework.org/schema/task/spring-task.xsd
+
+						   http://www.springframework.org/schema/aop
+						   http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--<context:component-scan base-package="com.desk.project"/>-->
+    <!--<aop:aspectj-autoproxy />-->
+
+    <!--&lt;!&ndash;<aop:aspectj-autoproxy proxy-target-class="true"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<task:annotation-driven/>&ndash;&gt;-->
+
+    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath*:jdbc.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--<import resource="classpath*:config/spring-mybatis.xml" />-->
+    <!--<task:annotation-driven/>-->
+
+    <!-- 配置bean-->
+    <bean id="userService" class="com.desk.project.biz.Impl.UserService">
+        <property name="name" value = "wangwu" /> <!--通过无参构造函数来构造-->
+    </bean>
+
+    <bean id = "user1" class="com.desk.project.biz.Impl.UserService">
+        <constructor-arg index="0" value="wangwu"/> <!-- 通过有参构造器-->
+
+    </bean>
+    <bean id="user2" class="com.desk.project.factory.UserFactory" factory-method="newInstance">
+        <constructor-arg name = "name" value="wangwu"/>  <!--通过静态工厂-->
+    </bean>
+    <bean id="factory" class="com.desk.project.factory.DynamicFactory"/>
+    <bean id="user3" factory-bean="factory" factory-method="newInstance">
+        <constructor-arg name = "name" value="wangwu"/>  <!--通过动态工厂-->
+    </bean>
+
+</beans>
