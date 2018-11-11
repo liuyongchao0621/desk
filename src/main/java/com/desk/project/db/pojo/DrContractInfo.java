@@ -3,7 +3,9 @@ package com.desk.project.db.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class DrContractInfo {
+public class DrContractInfo implements java.io.Serializable{
+
+    private static final long serialVersionUID = -7264078257180394727L;
     private Long id;
 
     private String bizType;

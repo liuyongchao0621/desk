@@ -3,7 +3,10 @@ package com.desk.project.db.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class DrRepaySchedule {
+public class DrRepaySchedule implements java.io.Serializable{
+
+
+    private static final long serialVersionUID = 6565427970907972712L;
     private Long id;
 
     private String bizId;
